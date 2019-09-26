@@ -1,3 +1,5 @@
+'use strict'
+
 const rl = require('readline-sync');
 
 let salir = false;
@@ -32,13 +34,27 @@ const calculadorTarifa = () => {
 ítems que el usuario ha introducido.*/
 
 const listaCompra = () => {
-  let option = parseInt(rl.question('Introduce los minutos: '));
+  let lista = [];
+  let fin = false;
+
+  while (!fin) {
+    let option = rl.question('Introduce el articulo o enter para terminar: ');
+
+    if (option) {
+      lista.includes(option) !== true && lista.push(option);
+    } else {
+      fin = !fin;
+    }
+  }
+
+  lista.map(articulo => console.log(`- ${articulo}`));
 
 };
 
 while(!salir){
   console.log('Elige una opcion de la lista o -1 para salir');
   console.log('1: Calculador de tarifa');
+  console.log('2: Lista de la compra');
   let option = parseInt(rl.question('Introduce una opcion: '));
 
   switch (option) {
