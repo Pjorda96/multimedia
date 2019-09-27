@@ -128,7 +128,7 @@ while(!salir){
       break;
 
     case 4:
-      withoutVowels(rl.question('Introduce un texto: \n'))
+      withoutVowels(rl.question('Introduce un texto: \n'));
       break;
 
     case 5:
