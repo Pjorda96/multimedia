@@ -1,33 +1,30 @@
 import React from 'react';
 import {
-  SafeAreaView,
   StyleSheet,
-  ScrollView,
   View,
   Text,
-  StatusBar,
   Button,
   ActivityIndicator,
 } from 'react-native';
 
-const Header: () => React$Node = ({ balance, balanceInProgress, refresh }) => {
+const Header = ({ balance, balanceInProgress, refresh })=> {
   return (
-    <View style={styles.Header}>
-      <View style={styles.Menu}>
-        <Text style={styles.BurguerMenu}>M</Text>
+    <View style={styles.header}>
+      <View style={styles.menu}>
+        <Text style={styles.burguerMenu}>M</Text>
       </View>
 
-      <View style={styles.Brand}>
-        <Text style={styles.BText}>Place my bet</Text>
+      <View style={styles.brand}>
+        <Text style={styles.bText}>Place my bet</Text>
       </View>
 
-      <View style={styles.Balance}>
+      <View style={styles.balance}>
         {
           balanceInProgress
-            ? <ActivityIndicator size="small" color="#0000ff" />
+            ? <ActivityIndicator size="small" color="#fff" />
             : (
-                <Text style={styles.BalButton} onPress={() => refresh()}>
-                  {balance} €
+                <Text style={styles.balButton} onPress={() => refresh()}>
+                  {balance || 0} €
                 </Text>
               )
         }
@@ -37,39 +34,39 @@ const Header: () => React$Node = ({ balance, balanceInProgress, refresh }) => {
 };
 
 const styles = StyleSheet.create({
-  Header: {
+  header: {
     backgroundColor: '#85BB65',
     flexDirection: 'row',
     height: 60,
   },
-  Menu: {
+  menu: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  BurguerMenu: {
+  burguerMenu: {
     color: 'white',
     fontSize: 20,
   },
-  Brand: {
+  brand: {
     flex: 4,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  BText: {
+  bText: {
     fontWeight: 'bold',
     color: 'white',
     fontSize: 30,
     textTransform: 'uppercase',
   },
-  Balance: {
+  balance: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  BalButton: {
+  balButton: {
     color: 'white',
-    fontSize: 20,
+    fontSize: 15,
   },
 });
 
