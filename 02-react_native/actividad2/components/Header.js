@@ -7,31 +7,27 @@ import {
   ActivityIndicator,
 } from 'react-native';
 
-const Header = ({ balance, balanceInProgress, refresh })=> {
-  return (
-    <View style={styles.header}>
-      <View style={styles.menu}>
-        <Text style={styles.burguerMenu}>M</Text>
-      </View>
-
-      <View style={styles.brand}>
-        <Text style={styles.bText}>Place my bet</Text>
-      </View>
-
-      <View style={styles.balance}>
-        {
-          balanceInProgress
-            ? <ActivityIndicator size="small" color="#fff" />
-            : (
-                <Text style={styles.balButton} onPress={() => refresh()}>
-                  {balance || 0} €
-                </Text>
-              )
-        }
-      </View>
+const Header = ({ balance, balanceInProgress, refresh }) => (
+  <View style={styles.header}>
+    <View style={styles.menu}>
+      <Text style={styles.burguerMenu}>PmB</Text>
     </View>
-  );
-};
+
+    <View style={styles.brand}>
+      <Text style={styles.bText}>Place my bet</Text>
+    </View>
+
+    <View style={styles.balance}>
+      {
+        balanceInProgress
+          ? <ActivityIndicator size="small" color="#fff" />
+          : <Text style={styles.balButton} onPress={() => refresh()}>
+              {balance || 0} €
+            </Text>
+      }
+    </View>
+  </View>
+);
 
 const styles = StyleSheet.create({
   header: {
