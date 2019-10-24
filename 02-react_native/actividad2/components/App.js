@@ -22,23 +22,26 @@ export default class App extends Component {
 
   data = [
     {
+      id: 0,
       local: 'Valencia',
       visitante: 'Levante',
-      cantidad: 10,
+      importe: 10,
       cuota: 1.10,
       favorito: true,
     },
     {
+      id: 1,
       local: 'Real Madrid',
       visitante: 'Barça',
-      cantidad: 5,
+      importe: 5,
       cuota: 2,
       favorito: true,
     },
     {
+      id: 2,
       local: 'Atletico de Madrid',
       visitante: 'Getafe',
-      cantidad: 20,
+      importe: 20,
       cuota: 2.15,
       favorito: false,
     },
@@ -66,8 +69,8 @@ export default class App extends Component {
     this.setState({ view });
   }
 
-  changeToFavorite(favorito = false) {
-    this.setState({ favorito });
+  changeToFavorite(id, favorito) {
+    data.foreach(item => item.id === id && item.favorito = !favorito);
   }
 
   render () {
@@ -90,7 +93,7 @@ export default class App extends Component {
             <Content
               data={this.data}
               view={view}
-              changeToFavorite={this.changeToFavorite}
+              toggleToFavorite={this.toggleToFavorite}
             />
           </ScrollView>
           <View>
