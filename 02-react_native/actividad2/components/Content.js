@@ -24,14 +24,14 @@ export default class Content extends Component {
           .filter(item => item.favorito === true)
           .map(item => <Item
                          { ...item }
-                         key={id}
-                         toggleToFavorite={toggleToFavorite}
+                         key={item.id}
+//                         toggleToFavorite={toggleToFavorite}
                        />)
       : data
           .map(item => <Item
                         { ...item }
-                        key={id}
-                        toggleToFavorite={toggleToFavorite}
+                        key={item.id}
+//                        toggleToFavorite={toggleToFavorite}
                        />);
   }
 
@@ -51,5 +51,4 @@ export default class Content extends Component {
 }
 
 const styles = StyleSheet.create({
-
 });

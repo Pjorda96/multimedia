@@ -50,7 +50,7 @@ export default class App extends Component {
   handleRefresh = this.handleRefresh.bind(this);
   balanceInProgress = this.balanceInProgress.bind(this);
   handleViewChange = this.handleViewChange.bind(this);
-  changeToFavorite = this.changeToFavorite.bind(this);
+//  changeToFavorite = this.changeToFavorite.bind(this);
 
   balanceInProgress() {
     const { balanceInProgress } = this.state;
@@ -69,9 +69,11 @@ export default class App extends Component {
     this.setState({ view });
   }
 
-  changeToFavorite(id, favorito) {
-    data.foreach(item => item.id === id && item.favorito = !favorito);
-  }
+//  changeToFavorite(id, favorito) {
+//    console.log(id, favorito, this.data)
+//    this.data.forEach(item => {(item.id === id) && (item.favorito = !favorito)});
+//    console.log(this.data)
+//  }
 
   render () {
     const { balance, balanceInProgress, view } = this.state;
@@ -93,7 +95,7 @@ export default class App extends Component {
             <Content
               data={this.data}
               view={view}
-              toggleToFavorite={this.toggleToFavorite}
+//              toggleToFavorite={this.changeToFavorite}
             />
           </ScrollView>
           <View>
@@ -116,5 +118,6 @@ const styles = StyleSheet.create({
   },
   body: {
     height: 'auto',
+    backgroundColor: '#D3ECC4',
   },
 });
