@@ -7,6 +7,8 @@ import {
   ActivityIndicator,
   TouchableWithoutFeedback,
 } from 'react-native';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
 
 const Item = ({id, local, visitante, importe, cuota, favorito, /*toggleToFavorite*/}) => (
   <View style={styles.item}>
@@ -21,6 +23,7 @@ const Item = ({id, local, visitante, importe, cuota, favorito, /*toggleToFavorit
         <Text
 //          onPress={() => toggleToFavorite(id, !favorito)}
         >
+          {/*<FontAwesomeIcon icon={['far', 'star']} color="yellow" />*/}
           F
         </Text>
       </TouchableWithoutFeedback>
