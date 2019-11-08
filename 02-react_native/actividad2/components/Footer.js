@@ -6,6 +6,8 @@ import {
   Button,
   TouchableHighlight,
 } from 'react-native';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { faFutbol, faStar } from '@fortawesome/free-solid-svg-icons'
 
 import { ViewConstant } from '../constants.js'
 
@@ -30,13 +32,13 @@ export default class Footer extends Component {
           style={styles.bottomButtons}
           onPress={this.changeToAll}
         >
-          <Text style={[styles.footerText, view || styles.active]}>Todos</Text>
+          <FontAwesomeIcon icon={faFutbol} color={view ? 'white' : '#85BB65'} size={25} />
         </TouchableHighlight>
         <TouchableHighlight
           style={styles.bottomButtons}
           onPress={this.changeToFavorites}
         >
-          <Text style={[styles.footerText, view && styles.active]}>Favoritos</Text>
+          <FontAwesomeIcon icon={faStar} color={view ? '#85BB65' : 'white'} size={25} />
         </TouchableHighlight>
       </View>
     );
@@ -55,13 +57,5 @@ const styles = StyleSheet.create({
     alignItems:'center',
     justifyContent: 'center',
     flex: 1,
-  },
-  footerText: {
-    color: 'white',
-    fontSize: 25,
-    fontWeight:'bold',
-  },
-  active: {
-    color: '#85BB65',
   },
 });
