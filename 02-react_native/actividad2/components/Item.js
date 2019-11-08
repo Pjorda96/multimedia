@@ -23,8 +23,7 @@ const Item = ({id, local, visitante, importe, cuota, favorito, /*toggleToFavorit
         <Text
 //          onPress={() => toggleToFavorite(id, !favorito)}
         >
-          {/*<FontAwesomeIcon icon={['far', 'star']} color="yellow" />*/}
-          F
+          <FontAwesomeIcon icon={faStar} color={favorito ? 'yellow' : 'lightgrey'} />
         </Text>
       </TouchableWithoutFeedback>
     </View>
