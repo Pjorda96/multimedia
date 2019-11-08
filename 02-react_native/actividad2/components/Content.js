@@ -17,22 +17,13 @@ export default class Content extends Component {
   renderList = this.renderList.bind(this);
 
   renderList() {
-    const { data, view, toggleToFavorite } = this.props;
+    const { data, toggleToFavorite } = this.props;
 
-    return view === ViewConstant.FAVORITES
-      ? data
-          .filter(item => item.favorito === true)
-          .map(item => <Item
-                         { ...item }
-                         key={item.id}
-//                         toggleToFavorite={toggleToFavorite}
-                       />)
-      : data
-          .map(item => <Item
-                        { ...item }
-                        key={item.id}
-//                        toggleToFavorite={toggleToFavorite}
-                       />);
+    return data.map(item => <Item
+          { ...item }
+          key={item.id}
+          toggleToFavorite={toggleToFavorite}
+        />)
   }
 
   render () {
@@ -43,7 +34,7 @@ export default class Content extends Component {
         {
           data.length
             ? this.renderList()
-            : <ActivityIndicator size="large" color="black" />
+            : <Text style={styles.empty}>No favorites yet</Text>
         }
       </View>
     );
@@ -51,4 +42,9 @@ export default class Content extends Component {
 }
 
 const styles = StyleSheet.create({
+ empty: {
+  alignSelf: 'center',
+  marginTop: 20,
+  fontSize: 20,
+ },
 });

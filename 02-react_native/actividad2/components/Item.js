@@ -10,7 +10,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 
-const Item = ({id, local, visitante, importe, cuota, favorito, /*toggleToFavorite*/}) => (
+const Item = ({id, local, visitante, importe, cuota, favorito, toggleToFavorite}) => (
   <View style={styles.item}>
     <View style={styles.info}>
       <Text style={styles.match}>{`${local} - ${visitante}`}</Text>
@@ -18,13 +18,15 @@ const Item = ({id, local, visitante, importe, cuota, favorito, /*toggleToFavorit
       <Text style={styles.subinfo}>Importe: {importe}</Text>
     </View>
 
-    <View style={styles.info}>
-      <TouchableWithoutFeedback style={[styles.button, favorito && styles.favorito]}>
-        <Text
-//          onPress={() => toggleToFavorite(id, !favorito)}
-        >
-          <FontAwesomeIcon icon={faStar} color={favorito ? 'yellow' : 'lightgrey'} />
-        </Text>
+    <View style={[styles.info, styles.favorite]}>
+      <TouchableWithoutFeedback
+        style={[styles.button, favorito && styles.favorito]}
+        onPress={() => toggleToFavorite(id, !favorito)}
+      >
+        <FontAwesomeIcon
+          icon={faStar}
+          color={favorito ? 'yellow' : 'lightgrey'}
+        />
       </TouchableWithoutFeedback>
     </View>
   </View>
@@ -45,6 +47,8 @@ const styles = StyleSheet.create({
   info: {
     padding: 8,
     fontWeight: 'bold',
+  },
+  favorite: {
   },
   subinfo: {
     fontSize: 12,

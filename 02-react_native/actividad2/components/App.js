@@ -17,40 +17,40 @@ export default class App extends Component {
   state = {
     balance: 10.35,
     balanceInProgress: false,
-    view: 0,
+    view: ViewConstant.DEFAULT,
+    data: [
+      {
+        id: 0,
+        local: 'Valencia',
+        visitante: 'Levante',
+        importe: 10,
+        cuota: 1.10,
+        favorito: true,
+      },
+      {
+        id: 1,
+        local: 'Real Madrid',
+        visitante: 'Barça',
+        importe: 5,
+        cuota: 2,
+        favorito: true,
+      },
+      {
+        id: 2,
+        local: 'Atletico de Madrid',
+        visitante: 'Getafe',
+        importe: 20,
+        cuota: 2.15,
+        favorito: false,
+      },
+    ],
   }
-
-  data = [
-    {
-      id: 0,
-      local: 'Valencia',
-      visitante: 'Levante',
-      importe: 10,
-      cuota: 1.10,
-      favorito: true,
-    },
-    {
-      id: 1,
-      local: 'Real Madrid',
-      visitante: 'Barça',
-      importe: 5,
-      cuota: 2,
-      favorito: true,
-    },
-    {
-      id: 2,
-      local: 'Atletico de Madrid',
-      visitante: 'Getafe',
-      importe: 20,
-      cuota: 2.15,
-      favorito: false,
-    },
-  ];
 
   handleRefresh = this.handleRefresh.bind(this);
   balanceInProgress = this.balanceInProgress.bind(this);
   handleViewChange = this.handleViewChange.bind(this);
-//  changeToFavorite = this.changeToFavorite.bind(this);
+  changeToFavorite = this.changeToFavorite.bind(this);
+  filterContent = this.filterContent.bind(this);
 
   balanceInProgress() {
     const { balanceInProgress } = this.state;
@@ -69,11 +69,21 @@ export default class App extends Component {
     this.setState({ view });
   }
 
-//  changeToFavorite(id, favorito) {
-//    console.log(id, favorito, this.data)
-//    this.data.forEach(item => {(item.id === id) && (item.favorito = !favorito)});
-//    console.log(this.data)
-//  }
+  changeToFavorite(id, favorito) {
+    const { data } = this.state;
+
+    data.map(item => (item.id === id) && (item.favorito = favorito));
+
+    this.setState({data});
+  }
+
+  filterContent() {
+    const { data, view } = this.state;
+
+    return view
+      ? data.filter(item => item.favorito)
+      : data;
+    }
 
   render () {
     const { balance, balanceInProgress, view } = this.state;
@@ -93,9 +103,8 @@ export default class App extends Component {
             style={styles.body}
            >
             <Content
-              data={this.data}
-              view={view}
-//              toggleToFavorite={this.changeToFavorite}
+              data={this.filterContent()}
+              toggleToFavorite={this.changeToFavorite}
             />
           </ScrollView>
           <View>
