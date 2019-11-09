@@ -32,13 +32,13 @@ export default class Footer extends Component {
           style={styles.bottomButtons}
           onPress={this.changeToAll}
         >
-          <FontAwesomeIcon icon={faFutbol} color={view ? 'white' : '#85BB65'} size={25} />
+          <FontAwesomeIcon icon={faFutbol} color={view ? 'white' : '#85BB65'} size={35} />
         </TouchableHighlight>
         <TouchableHighlight
           style={styles.bottomButtons}
           onPress={this.changeToFavorites}
         >
-          <FontAwesomeIcon icon={faStar} color={view ? '#85BB65' : 'white'} size={25} />
+          <FontAwesomeIcon icon={faStar} color={view ? '#85BB65' : 'white'} size={35} />
         </TouchableHighlight>
       </View>
     );
