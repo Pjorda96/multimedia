@@ -10,14 +10,17 @@ import {
 import Header from './Header';
 import Footer from './Footer';
 import Content from './Content';
+import Filters from './Filters';
 
-import { ViewConstant } from '../constants.js'
+import { ViewConstant, FilterConstant } from '../constants.js'
 
 export default class App extends Component {
   state = {
     balance: 10.35,
     balanceInProgress: false,
     view: ViewConstant.DEFAULT,
+    filter: FilterConstant.NONE,
+    word: '',
     data: [
       {
         id: 0,
@@ -98,6 +101,10 @@ export default class App extends Component {
   balanceInProgress = this.balanceInProgress.bind(this);
   handleViewChange = this.handleViewChange.bind(this);
   changeToFavorite = this.changeToFavorite.bind(this);
+  toggleOrderFilter = this.toggleOrderFilter.bind(this);
+  addWordFilter = this.addWordFilter.bind(this);
+  resetFilters = this.resetFilters.bind(this);
+  filterByFilters = this.filterByFilters.bind(this);
   filterContent = this.filterContent.bind(this);
 
   balanceInProgress() {
@@ -125,16 +132,74 @@ export default class App extends Component {
     this.setState({data});
   }
 
+  toggleOrderFilter() {
+    const { filter: filterState } = this.state;
+
+    // si no hay filtro o es ascendente (FilterConstant.ASCENDING === 0)
+    const filter = !filterState
+      ? FilterConstant.DESCENDING
+      : FilterConstant.ASCENDING;
+
+    this.setState({filter});
+  }
+
+  addWordFilter(inputValue) {
+    this.setState({word: inputValue});
+  }
+
+  resetFilters() {
+    this.setState({
+      filter: FilterConstant.NONE,
+      word: '',
+    });
+  }
+
+  filterByFilters() {
+    const { data, word, filter } = this.state;
+    let filtered = {...data};
+
+    if (word) {
+      filtered = data.filter(item =>
+        item.local === word || item.visitante === word
+      )
+    }
+
+    if (filter === FilterConstant.ASCENDING) {
+      filtered = data.sort((item1, item2) => {
+        if (item1 < item2) return -1;
+        if (item1 > item2) return 1;
+        return 0;
+      });
+    }
+
+    if (filter === FilterConstant.DESCENDING) {
+      filtered = data.sort((item1, item2) => {
+        if (item1 < item2) return -1;
+        if (item1 > item2) return 1;
+        return 0;
+      }).reverse();
+    }
+
+    return filtered;
+  }
+
   filterContent() {
-    const { data, view } = this.state;
+    const { data, view, filter, word } = this.state;
+
+    const hasFilter =  filter === FilterConstant.ASCENDING || filter === FilterConstant.DESCENDING || word;
+
+    if (hasFilter) {
+      return this.filterByFilters();
+    }
 
     return view
       ? data.filter(item => item.favorito)
       : data;
-    }
+  }
 
   render () {
-    const { balance, balanceInProgress, view } = this.state;
+    const { word, balance, balanceInProgress, view, filter } = this.state;
+
     return (
       <>
         <StatusBar barStyle="dark-content" />
@@ -144,6 +209,16 @@ export default class App extends Component {
               balance={balance}
               balanceInProgress={balanceInProgress}
               refresh={this.handleRefresh}
+            />
+          </View>
+
+          <View>
+            <Filters
+              word={word}
+              filter={filter}
+              toggleOrderFilter={this.toggleOrderFilter}
+              addWordFilter={this.addWordFilter}
+              resetFilters={this.resetFilters}
             />
           </View>
           <ScrollView
