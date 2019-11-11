@@ -35,7 +35,7 @@ const Item = ({id, local, visitante, importe, cuota, favorito, toggleToFavorite}
 const styles = StyleSheet.create({
   item: {
     borderStyle: 'solid',
-    borderColor: 'black',
+    borderColor: 'grey',
     borderWidth: .5,
     borderRadius: 5,
     margin: 3,

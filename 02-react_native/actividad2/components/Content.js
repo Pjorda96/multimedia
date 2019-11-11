@@ -32,7 +32,7 @@ export default class Content extends Component {
     return (
       <View style={styles.list}>
         {
-          data.length
+          data && data.length
             ? this.renderList()
             : <Text style={styles.empty}>No favorites yet</Text>
         }
