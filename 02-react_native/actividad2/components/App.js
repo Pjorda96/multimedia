@@ -157,17 +157,13 @@ export default class App extends Component {
 
     if (filter === FilterConstant.ASCENDING) {
       filtered = data.sort((item1, item2) => {
-        if (item1 < item2) return -1;
-        if (item1 > item2) return 1;
-        return 0;
+        return item1.apostado - item2.apostado;
       });
     }
 
     if (filter === FilterConstant.DESCENDING) {
       filtered = data.sort((item1, item2) => {
-        if (item1 < item2) return -1;
-        if (item1 > item2) return 1;
-        return 0;
+        return item1.apostado - item2.apostado;
       }).reverse();
     }
 
