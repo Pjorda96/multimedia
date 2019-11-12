@@ -44,7 +44,6 @@ export default class Content extends Component {
 const styles = StyleSheet.create({
  empty: {
   alignSelf: 'center',
-  marginTop: 20,
   fontSize: 20,
  },
 });

@@ -147,7 +147,7 @@ export default class App extends Component {
 
   filterByFilters() {
     const { data, word, filter } = this.state;
-    let filtered = {...data};
+    let filtered = [...data];
 
     if (word) {
       filtered = data.filter(item =>
