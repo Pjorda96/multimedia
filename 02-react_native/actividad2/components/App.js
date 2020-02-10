@@ -120,7 +120,7 @@ export default class App extends Component {
 
     data.map(item => (item.id === id) && (item.favorito = favorito));
 
-    this.setState({data});
+    this.setState({...data});
   }
 
   toggleOrderFilter() {
@@ -173,7 +173,7 @@ export default class App extends Component {
   filterContent() {
     const { data, view, filter, word } = this.state;
 
-    const hasFilter =  filter === FilterConstant.ASCENDING || filter === FilterConstant.DESCENDING || word;
+    const hasFilter = filter === FilterConstant.ASCENDING || filter === FilterConstant.DESCENDING || word;
 
     if (hasFilter) {
       return this.filterByFilters();
