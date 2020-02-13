@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import {
-  SafeAreaView,
   StyleSheet,
-  ScrollView,
   View,
   Text,
-  StatusBar,
-  FlatList,
-  ActivityIndicator,
 } from 'react-native';
 import Item from './Item';
 

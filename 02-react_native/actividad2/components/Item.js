@@ -3,8 +3,6 @@ import {
   StyleSheet,
   View,
   Text,
-  Button,
-  ActivityIndicator,
   TouchableWithoutFeedback,
   TouchableHighlight
 } from 'react-native';

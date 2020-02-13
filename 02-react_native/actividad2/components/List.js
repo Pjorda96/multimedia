@@ -4,7 +4,6 @@ import {
   StyleSheet,
   ScrollView,
   View,
-  Text,
   StatusBar,
 } from 'react-native';
 import Header from './Header';
@@ -16,7 +15,7 @@ import { ViewConstant, FilterConstant } from '../constants.js'
 
 export default class List extends Component {
   static navigationOptions = {
-    title: 'Main list',
+    title: 'Lista principal',
   };
 
   state = {

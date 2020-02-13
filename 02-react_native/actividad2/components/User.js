@@ -1,32 +1,55 @@
 import React, { Component } from 'react';
 import {
-  SafeAreaView,
   StyleSheet,
-  ScrollView,
   View,
   Text,
-  StatusBar,
 } from 'react-native';
 
 export default class User extends Component {
   static navigationOptions = {
-    title: 'User',
+    title: 'Pablo',
   };
 
   state = {
     userInfo: {
       name: 'Pablo',
+      surname: 'Jordá García',
+      email: 'pjorda96@gmail.com',
+      age: 23,
+      genre: 'M',
+      favoriteTeam: 'Valencia',
     },
   };
 
   render () {
-    const { userInfo: { name } } = this.state;
+    const { name, surname, email, age, genre, favoriteTeam } = this.state.userInfo;
 
     return (
-      <View>
-        <Text>{name}</Text>
-        <Text>Hello 2</Text>
+      <View style={styles.container}>
+        <Text style={styles.name}>Nombre: {name}</Text>
+        <Text style={styles.surname}>Apellidos: {surname}</Text>
+        <Text style={styles.subinfo}>Email: {email}</Text>
+        <Text style={styles.subinfo}>Edad: {age}</Text>
+        <Text style={styles.subinfo}>Género: {genre === 'M' ? 'masculino' : 'femenino'}</Text>
+        <Text style={styles.subinfo}>Equipo favorito: {favoriteTeam}</Text>
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 8
+  },
+  name: {
+    fontSize: 30,
+    fontWeight: 'bold',
+  },
+  surname: {
+    fontSize: 30,
+    marginBottom: 5,
+  },
+  subinfo: {
+    fontSize: 20,
+  },
+});
