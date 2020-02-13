@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import {
-  SafeAreaView,
   StyleSheet,
-  ScrollView,
   View,
   Text,
-  StatusBar,
-  FlatList,
-  ActivityIndicator,
 } from 'react-native';
 import Item from './Item';
 
@@ -15,6 +10,7 @@ import { ViewConstant } from '../constants.js'
 
 export default class Content extends Component {
   renderList = this.renderList.bind(this);
+  handleViewDetails = this.handleViewDetails.bind(this);
 
   renderList() {
     const { data, toggleToFavorite } = this.props;
@@ -23,7 +19,14 @@ export default class Content extends Component {
           { ...item }
           key={item.id}
           toggleToFavorite={toggleToFavorite}
+          handleViewDetails={this.handleViewDetails}
         />)
+  }
+
+  handleViewDetails(id) {
+    const { viewDetails } = this.props;
+
+    viewDetails(id);
   }
 
   render () {
