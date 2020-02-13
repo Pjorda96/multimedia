@@ -6,15 +6,22 @@ import {
   Button,
   ActivityIndicator,
   TouchableWithoutFeedback,
+  TouchableHighlight
 } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 
-const Item = ({id, local, visitante, apostado, favorito, toggleToFavorite}) => (
+const Item = ({id, local, visitante, apostado, favorito, toggleToFavorite, handleViewDetails}) => (
   <View style={styles.item}>
     <View style={styles.info}>
       <Text style={styles.match}>{`${local} - ${visitante}`}</Text>
       <Text style={styles.subinfo}>Total: {apostado}</Text>
+    </View>
+
+    <View>
+      <TouchableHighlight onPress={() => handleViewDetails(id)}>
+        <Text>Details</Text>
+      </TouchableHighlight>
     </View>
 
     <View style={[styles.info, styles.favorite]}>
