@@ -25,7 +25,7 @@ export default class List extends Component {
     filter: FilterConstant.NONE,
     word: '',
     data: [
-      {
+      /*{
         id: 0,
         local: 'Valencia',
         visitante: 'Levante',
@@ -87,10 +87,11 @@ export default class List extends Component {
         visitante: 'Getafe',
         apostado: 20,
         favorito: false,
-      },
+      },*/
     ],
-  }
+  };
 
+  getApuestas = this.getApuestas.bind(this);
   handleRefresh = this.handleRefresh.bind(this);
   balanceInProgress = this.balanceInProgress.bind(this);
   handleViewChange = this.handleViewChange.bind(this);
@@ -101,6 +102,24 @@ export default class List extends Component {
   filterByFilters = this.filterByFilters.bind(this);
   filterContent = this.filterContent.bind(this);
   viewDetails = this.viewDetails.bind(this);
+
+  componentDidMount() {
+    this.getApuestas();
+  }
+
+  getApuestas(){
+    const apuestas = 'https://gist.githubusercontent.com/Pjorda96/fea0d22baaedfade7506972b68d88d31/raw/e98fc18d3fac3e0cfbf0f3c12cb5df8df2c0b9e7/apuestas.json';
+
+    return fetch(apuestas)
+      .then(response => response.json())
+      .then(responseJson => {
+        const { apuestas } = responseJson;
+        this.setState({ data: [...apuestas] });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
 
   balanceInProgress() {
     const { balanceInProgress } = this.state;
