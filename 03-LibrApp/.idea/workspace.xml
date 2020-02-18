@@ -2,19 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15c8d9b9-ffe8-4d29-8098-f2396a5b48f3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/librapp/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/librapp/components/Book.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/librapp/components/Filters.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/librapp/const.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/librapp/pages/Edit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/librapp/pages/Statistics.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/librapp/storage/library.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librapp/__tests__/App-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/librapp/__tests__/App-test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librapp/components/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/librapp/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/librapp/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librapp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/librapp/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librapp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/librapp/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/librapp/components/Book.js" beforeDir="false" afterPath="$PROJECT_DIR$/librapp/components/Book.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/librapp/pages/Details.js" beforeDir="false" afterPath="$PROJECT_DIR$/librapp/pages/Details.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/librapp/pages/Edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/librapp/pages/Edit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/librapp/pages/List.js" beforeDir="false" afterPath="$PROJECT_DIR$/librapp/pages/List.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/librapp/storage/library.js" beforeDir="false" afterPath="$PROJECT_DIR$/librapp/storage/library.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +78,7 @@
       <workItem from="1581875985972" duration="334000" />
       <workItem from="1581876374998" duration="275000" />
       <workItem from="1581876810166" duration="294000" />
-      <workItem from="1581878455460" duration="12851000" />
+      <workItem from="1581878455460" duration="14982000" />
     </task>
     <servers />
   </component>

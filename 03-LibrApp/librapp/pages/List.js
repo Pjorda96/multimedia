@@ -8,7 +8,7 @@ import {
   StatusBar, Button,
 } from 'react-native';
 
-import Library from '../storage/library';
+import { getLibrary } from '../storage/library';
 import Book from '../components/Book';
 
 export default class List extends Component {
@@ -21,7 +21,8 @@ export default class List extends Component {
   };
 
   componentDidMount(): void {
-    this.setState({ library: [...Library] });
+    const library = getLibrary();
+    this.setState({ library });
   }
 
   render() {

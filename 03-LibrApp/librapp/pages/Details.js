@@ -7,7 +7,7 @@ import {
   Button,
 } from 'react-native';
 
-import Library from '../storage/library';
+import { getLibrary, deleteBook } from '../storage/library';
 
 export default class Details extends Component {
   static navigationOptions = {
@@ -19,20 +19,24 @@ export default class Details extends Component {
   componentDidMount(): void {
     const navigation = this.props.navigation;
     const id = navigation.getParam('id');
-    const [book] = Library.filter(item => item.id === id);
+    const [book] = getLibrary().filter(item => item.id === id);
 
     this.setState({ ...book })
   }
 
-  editBook() {
+  handleEditBook() {
     const navigation = this.props.navigation;
     const { id } = this.state;
 
     navigation.navigate('Edit', { id })
   }
 
-  deleteBook() {
-    console.log('hello'); // TODO: delete
+  handleDeleteBook() {
+    const navigation = this.props.navigation;
+    const { id } = this.state;
+
+    deleteBook(id);
+    navigation.navigate('List')
   }
 
   render() {
@@ -49,11 +53,11 @@ export default class Details extends Component {
         <View>
           <Button
             title="Editar"
-            onPress={() => this.editBook()}
+            onPress={() => this.handleEditBook()}
           />
           <Button
             title="Borrar"
-            onPress={() => this.deleteBook()}
+            onPress={() => this.handleDeleteBook()}
           />
         </View>
       </SafeAreaView>

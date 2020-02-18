@@ -5,7 +5,10 @@ import {
   ScrollView,
   View,
   Text,
-  StatusBar, Button, TouchableHighlight, TouchableWithoutFeedback,
+  StatusBar,
+  Button,
+  TouchableHighlight,
+  TouchableWithoutFeedback,
 } from 'react-native';
 
 export default function Book(props) {

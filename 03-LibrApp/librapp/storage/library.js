@@ -1,6 +1,4 @@
-
-
-const library = [
+let library = [
   {
     id: 1,
     title: 'El Juego de Ender',
@@ -39,4 +37,10 @@ const library = [
   },
 ];
 
-export default library;
+export function getLibrary() {
+  return library;
+}
+
+export function deleteBook(id) {
+  library = library.filter(item => item.id === id);
+}

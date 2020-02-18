@@ -7,7 +7,7 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
-import Library from '../storage/library';
+import { getLibrary } from '../storage/library';
 
 export default class Edit extends Component {
   static navigationOptions = {
@@ -19,7 +19,7 @@ export default class Edit extends Component {
   componentDidMount(): void {
     const navigation = this.props.navigation;
     const id = navigation.getParam('id');
-    const [book] = Library.filter(item => item.id === id);
+    const [book] = getLibrary().filter(item => item.id === id);
 
     this.setState({ ...book })
   }
