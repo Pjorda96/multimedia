@@ -2,69 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15c8d9b9-ffe8-4d29-8098-f2396a5b48f3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.buckconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flowconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.watchmanconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/__tests__/App-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/BUCK" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build_defs.bzl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/debug.keystore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/debug/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/java/com/librapp/MainActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/java/com/librapp/MainApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/values/styles.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/babel.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/LibrApp-tvOS/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/LibrApp-tvOSTests/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/LibrApp.xcodeproj/project.pbxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/LibrApp.xcodeproj/xcshareddata/xcschemes/LibrApp-tvOS.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/LibrApp.xcodeproj/xcshareddata/xcschemes/LibrApp.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/LibrApp/AppDelegate.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/LibrApp/AppDelegate.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/LibrApp/Base.lproj/LaunchScreen.xib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/LibrApp/Images.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/LibrApp/Images.xcassets/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/LibrApp/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/LibrApp/main.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/LibrAppTests/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/LibrAppTests/LibrAppTests.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Podfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/metro.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/librapp/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/librapp/components/Book.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/librapp/components/Filters.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/librapp/const.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/librapp/pages/Edit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/librapp/pages/Statistics.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/librapp/storage/library.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/librapp/__tests__/App-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/librapp/__tests__/App-test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/librapp/components/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/librapp/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/librapp/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/librapp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/librapp/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/librapp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/librapp/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -85,20 +47,27 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/components/ejemplo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/librapp/pages" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="D:\code\clase\multimedia\03-LibrApp\node_modules\prettier" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\code\clase\multimedia\03-LibrApp\librapp\pages" />
+      <recent name="D:\code\clase\multimedia\03-LibrApp\librapp" />
       <recent name="D:\code\clase\multimedia\03-LibrApp\librapp\components" />
       <recent name="D:\code\clase\multimedia\03-LibrApp\components" />
       <recent name="D:\code\clase\multimedia\03-LibrApp" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\code\clase\multimedia\03-LibrApp\librapp\pages" />
+      <recent name="D:\code\clase\multimedia\03-LibrApp\librapp\components" />
       <recent name="D:\code\clase\multimedia\03-LibrApp\components\ejemplo" />
     </key>
   </component>
@@ -116,7 +85,7 @@
       <workItem from="1581875985972" duration="334000" />
       <workItem from="1581876374998" duration="275000" />
       <workItem from="1581876810166" duration="294000" />
-      <workItem from="1581878455460" duration="2064000" />
+      <workItem from="1581878455460" duration="12851000" />
     </task>
     <servers />
   </component>
@@ -124,6 +93,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="949" y="178" key="#ESLint" timestamp="1581880761397">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="949" y="178" key="#ESLint/0.0.1920.1040@0.0.1920.1040" timestamp="1581880761397" />
     <state x="1037" y="248" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1581875953796">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
