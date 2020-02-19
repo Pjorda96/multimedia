@@ -1,6 +1,8 @@
-export const GENDRES = {
-  cifi: 'Ciencia ficción',
-  av: 'Aventuras',
-  poli: 'Policiaca',
-  bio: 'Biográfica',
-};
+export const GENRES = [
+  {name: 'Ciencia ficción'},
+  {name: 'Aventuras'},
+  {name: 'Policiaca'},
+  {name: 'Biográfica'},
+  {name: 'Terror'},
+  {name: 'Romántica'},
+];

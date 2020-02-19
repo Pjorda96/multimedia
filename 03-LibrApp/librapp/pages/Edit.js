@@ -8,6 +8,7 @@ import {
   StatusBar,
 } from 'react-native';
 import { getLibrary } from '../storage/library';
+import Form from '../components/Form';
 
 export default class Edit extends Component {
   static navigationOptions = {
@@ -21,13 +22,15 @@ export default class Edit extends Component {
     const id = navigation.getParam('id');
     const [book] = getLibrary().filter(item => item.id === id);
 
-    this.setState({ ...book })
+    this.setState({ book: {...book} })
   }
 
   render() {
+    const { book } = this.state;
+
     return (
       <SafeAreaView>
-        <Text>Editar</Text>
+        {book && <Form buttonLabel='Editar' isEdit initialBook={book} />}
       </SafeAreaView>
     );
   };

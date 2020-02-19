@@ -40,13 +40,13 @@ export default class Details extends Component {
   }
 
   render() {
-    const { title, author, gendre, pages, punct } = this.state;
+    const { title, author, genre, pages, punct } = this.state;
 
     return (
       <SafeAreaView style={styles.container}>
         <Text style={styles.match}>Título: {title}</Text>
         <Text style={styles.subinfo}>Autor: {author}</Text>
-        { gendre && <Text style={styles.subinfo}>Género: {gendre}</Text> }
+        { genre && <Text style={styles.subinfo}>Género: {genre}</Text> }
         { pages && <Text style={styles.subinfo}>Páginas: {pages}</Text> }
         { punct && <Text style={styles.subinfo}>Puntuación: {punct}</Text> }
 
