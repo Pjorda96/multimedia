@@ -7,6 +7,14 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
+import {
+  LineChart,
+  BarChart,
+  PieChart,
+  ProgressChart,
+  ContributionGraph,
+  StackedBarChart
+} from 'react-native-chart-kit';
 
 export default class Statistics extends Component {
   static navigationOptions = {
