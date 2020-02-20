@@ -15,7 +15,9 @@ export default class Edit extends Component {
     title: 'Editar',
   };
 
-  state = {};
+  state = {
+    book: {},
+  };
 
   componentDidMount(): void {
     const navigation = this.props.navigation;
@@ -25,12 +27,18 @@ export default class Edit extends Component {
     this.setState({ book: {...book} })
   }
 
+  handleDetailsNav = () => {
+    const navigation = this.props.navigation;
+    const id = navigation.getParam('id');
+    this.props.navigation.navigate('Details', { id });
+  };
+
   render() {
     const { book } = this.state;
 
     return (
       <SafeAreaView>
-        {book && <Form buttonLabel='Editar' isEdit initialBook={book} />}
+        {Object.keys(book).length > 0 && <Form buttonLabel='Editar' isEdit initialBook={book} callback={this.handleDetailsNav} />}
       </SafeAreaView>
     );
   };

@@ -18,33 +18,34 @@ export default function Form(props) {
   const [ author, setAuthor ] = useState('');
   const [ genre, setGenre ] = useState(null);
   const [ pages, setPages ] = useState(null);
-  const [ punc, setPunc ] = useState(null);
+  const [ punct, setPunct ] = useState(null);
   const [ error, setError ] = useState(false);
 
-  const { buttonLabel, isEdit, initialBook } = props;
+  const { buttonLabel, isEdit, initialBook, callback } = props;
 
   useEffect(() => {
     if (isEdit && initialBook) {
-      console.log(initialBook.punc);
       setTitle(initialBook.title);
       setAuthor(initialBook.author);
       setGenre(initialBook.genre || null);
       setPages(initialBook.pages ? String(initialBook.pages) : null);
-      setPunc(initialBook.punc ? String(initialBook.punc) : null);
+      setPunct(initialBook.punct ? String(initialBook.punct) : null);
     }
   }, []);
 
   function handleSubmit() {
     if (title && author) {
       const book = {
+        ...initialBook,
         title,
         author,
         genre,
         pages: +pages,
-        punc: +punc,
+        punct: +punct,
       };
 
-      isEdit ? putBook(initialBook.id, book) : addBook(book)
+      isEdit ? putBook(book) : addBook(book);
+      callback();
     } else {
       handleError();
     }
@@ -104,9 +105,9 @@ export default function Form(props) {
         <Text>Puntuación:  </Text>
         <TextInput
           style={styles.search}
-          value={punc}
+          value={punct}
           keyboardType={'numeric'}
-          onChangeText={val => setPunc(val)}
+          onChangeText={val => setPunct(val)}
         />
       </View>
 

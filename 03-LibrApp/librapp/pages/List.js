@@ -7,6 +7,7 @@ import {
   Text,
   StatusBar, Button,
 } from 'react-native';
+import { NavigationEvents } from 'react-navigation';
 
 import { getLibrary } from '../storage/library';
 import Book from '../components/Book';
@@ -21,6 +22,10 @@ export default class List extends Component {
   };
 
   componentDidMount(): void {
+    this.update();
+  }
+
+  update() {
     const library = getLibrary();
     this.setState({ library });
   }
@@ -29,15 +34,20 @@ export default class List extends Component {
     const {navigate} = this.props.navigation;
 
     return (
-      <SafeAreaView style={styles.main}>
-        <ScrollView>
-          <View>
-            {this.state.library.map(item => (
-              <Book key={item.id} navigate={navigate} {...item} />
-            ))}
-          </View>
-        </ScrollView>
-      </SafeAreaView>
+      <>
+        <NavigationEvents
+          onWillFocus={() => this.update()}
+        />
+        <SafeAreaView style={styles.main}>
+          <ScrollView>
+            <View>
+              {this.state.library.map(item => (
+                <Book key={item.id} navigate={navigate} {...item} />
+              ))}
+            </View>
+          </ScrollView>
+        </SafeAreaView>
+      </>
     );
   };
 }

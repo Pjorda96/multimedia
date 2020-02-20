@@ -6,6 +6,7 @@ import {
   Text,
   Button,
 } from 'react-native';
+import { NavigationEvents } from 'react-navigation';
 
 import { getLibrary, deleteBook } from '../storage/library';
 
@@ -17,6 +18,10 @@ export default class Details extends Component {
   state = {};
 
   componentDidMount(): void {
+    this.update();
+  }
+
+  update() {
     const navigation = this.props.navigation;
     const id = navigation.getParam('id');
     const [book] = getLibrary().filter(item => item.id === id);
@@ -43,24 +48,29 @@ export default class Details extends Component {
     const { title, author, genre, pages, punct } = this.state;
 
     return (
-      <SafeAreaView style={styles.container}>
-        <Text style={styles.match}>Título: {title}</Text>
-        <Text style={styles.subinfo}>Autor: {author}</Text>
-        { genre && <Text style={styles.subinfo}>Género: {genre}</Text> }
-        { pages && <Text style={styles.subinfo}>Páginas: {pages}</Text> }
-        { punct && <Text style={styles.subinfo}>Puntuación: {punct}</Text> }
+      <>
+        <NavigationEvents
+          onWillFocus={() => this.update()}
+        />
+        <SafeAreaView style={styles.container}>
+          <Text style={styles.match}>Título: {title}</Text>
+          <Text style={styles.subinfo}>Autor: {author}</Text>
+          { genre && <Text style={styles.subinfo}>Género: {genre}</Text> }
+          { pages && <Text style={styles.subinfo}>Páginas: {pages}</Text> }
+          { punct && <Text style={styles.subinfo}>Puntuación: {punct}</Text> }
 
-        <View>
-          <Button
-            title="Editar"
-            onPress={() => this.handleEditBook()}
-          />
-          <Button
-            title="Borrar"
-            onPress={() => this.handleDeleteBook()}
-          />
-        </View>
-      </SafeAreaView>
+          <View>
+            <Button
+              title="Editar"
+              onPress={() => this.handleEditBook()}
+            />
+            <Button
+              title="Borrar"
+              onPress={() => this.handleDeleteBook()}
+            />
+          </View>
+        </SafeAreaView>
+      </>
     )
   }
 }

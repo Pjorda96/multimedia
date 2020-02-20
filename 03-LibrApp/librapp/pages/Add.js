@@ -15,14 +15,14 @@ export default class Add extends Component {
     title: 'Añadir nuevo',
   };
 
-  changeVal(val) {
-    console.log(val);
-  }
+  handleListNav = () => {
+    this.props.navigation.navigate('List');
+  };
 
   render() {
     return (
       <SafeAreaView style={styles.filters}>
-        <Form buttonLabel='Añadir' />
+        <Form buttonLabel='Añadir' callback={this.handleListNav} />
       </SafeAreaView>
     );
   };

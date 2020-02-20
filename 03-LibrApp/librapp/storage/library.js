@@ -46,9 +46,6 @@ export function addBook(book) {
   book = { ...book, id };
   library.push(book);
 
-
-  console.log(book);
-  console.log(library);
   return book;
 }
 
@@ -59,7 +56,6 @@ export function putBook(book) {
     }
   });
 
-  console.log(library);
   return book;
 }
 
