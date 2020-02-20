@@ -60,5 +60,5 @@ export function putBook(book) {
 }
 
 export function deleteBook(id) {
-  library = library.filter(item => item.id === id);
+  library = library.filter(item => item.id !== id);
 }

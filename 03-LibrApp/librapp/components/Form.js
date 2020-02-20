@@ -45,10 +45,19 @@ export default function Form(props) {
       };
 
       isEdit ? putBook(book) : addBook(book);
+      clear();
       callback();
     } else {
       handleError();
     }
+  }
+
+  function clear() {
+    setTitle('');
+    setAuthor('');
+    setGenre(null);
+    setPages(null);
+    setPunct(null);
   }
 
   function handleError () {
@@ -77,39 +86,43 @@ export default function Form(props) {
           onChangeText={val => setAuthor(val)}
         />
       </View>
-      <View style={styles.element}>
-        <Text>Género:  </Text>
-        <Picker
-          selectedValue={genre}
-          style={{height: 50, width: 200}}
-          onValueChange={itemValue =>
-            setGenre(itemValue)
-          }
-        >
-          <Picker.Item label='Select' value={null} enabled={false} />
-          {GENRES.map(item => (
-            <Picker.Item key={item.name} label={item.name} value={item.name} />
-          ))}
-        </Picker>
-      </View>
-      <View style={styles.element}>
-        <Text>Páginas:  </Text>
-        <TextInput
-          style={styles.search}
-          value={pages}
-          keyboardType={'numeric'}
-          onChangeText={val => setPages(val)}
-        />
-      </View>
-      <View style={styles.element}>
-        <Text>Puntuación:  </Text>
-        <TextInput
-          style={styles.search}
-          value={punct}
-          keyboardType={'numeric'}
-          onChangeText={val => setPunct(val)}
-        />
-      </View>
+      {isEdit &&
+        <>
+          <View style={styles.element}>
+            <Text>Género:  </Text>
+            <Picker
+              selectedValue={genre}
+              style={{height: 50, width: 200}}
+              onValueChange={itemValue =>
+                setGenre(itemValue)
+              }
+            >
+              <Picker.Item label='Select' value={null} enabled={false} />
+              {GENRES.map(item => (
+                <Picker.Item key={item.name} label={item.name} value={item.name} />
+              ))}
+            </Picker>
+          </View>
+          <View style={styles.element}>
+            <Text>Páginas:  </Text>
+            <TextInput
+              style={styles.search}
+              value={pages}
+              keyboardType={'numeric'}
+              onChangeText={val => setPages(val)}
+            />
+          </View>
+          <View style={styles.element}>
+            <Text>Puntuación:  </Text>
+            <TextInput
+              style={styles.search}
+              value={punct}
+              keyboardType={'numeric'}
+              onChangeText={val => setPunct(val)}
+            />
+          </View>
+        </>
+      }
 
       {error && <Text>Algo ha ido mal</Text>}
 
