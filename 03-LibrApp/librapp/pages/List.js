@@ -11,6 +11,7 @@ import { NavigationEvents } from 'react-navigation';
 
 import { getLibrary } from '../storage/library';
 import Book from '../components/Book';
+import Filters from '../components/Filters';
 
 export default class List extends Component {
   static navigationOptions = {
@@ -30,6 +31,10 @@ export default class List extends Component {
     this.setState({ library });
   }
 
+  handleFilter = (list) => {
+    list.length >= 1 && this.setState({ library: list });
+  };
+
   render() {
     const {navigate} = this.props.navigation;
 
@@ -39,6 +44,7 @@ export default class List extends Component {
           onWillFocus={() => this.update()}
         />
         <SafeAreaView style={styles.main}>
+          <Filters list={getLibrary()} filter={this.handleFilter} />
           <ScrollView>
             <View>
               {this.state.library.map(item => (

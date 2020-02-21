@@ -44,7 +44,6 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderColor: 'grey',
     borderWidth: .5,
-    borderRadius: 5,
     margin: 3,
     display: 'flex',
     flexDirection: 'row',
