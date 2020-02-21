@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="15c8d9b9-ffe8-4d29-8098-f2396a5b48f3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librapp/components/Book.js" beforeDir="false" afterPath="$PROJECT_DIR$/librapp/components/Book.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librapp/components/Filters.js" beforeDir="false" afterPath="$PROJECT_DIR$/librapp/components/Filters.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/librapp/components/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/librapp/components/Form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librapp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/librapp/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librapp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/librapp/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librapp/pages/List.js" beforeDir="false" afterPath="$PROJECT_DIR$/librapp/pages/List.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/librapp/pages/Statistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/librapp/pages/Statistics.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

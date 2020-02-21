@@ -69,11 +69,11 @@ export default function Form(props) {
   }
 
   return (
-    <SafeAreaView style={styles.filters}>
+    <SafeAreaView style={styles.form}>
       <View style={styles.element}>
         <Text>Título:  </Text>
         <TextInput
-          style={styles.search}
+          style={styles.input}
           value={title}
           onChangeText={val => setTitle(val)}
         />
@@ -81,7 +81,7 @@ export default function Form(props) {
       <View style={styles.element}>
         <Text>Autor:  </Text>
         <TextInput
-          style={styles.search}
+          style={styles.input}
           value={author}
           onChangeText={val => setAuthor(val)}
         />
@@ -104,7 +104,7 @@ export default function Form(props) {
       <View style={styles.element}>
         <Text>Páginas:  </Text>
         <TextInput
-          style={styles.search}
+          style={styles.input}
           value={pages}
           keyboardType={'numeric'}
           onChangeText={val => setPages(val)}
@@ -113,7 +113,7 @@ export default function Form(props) {
       <View style={styles.element}>
         <Text>Puntuación:  </Text>
         <TextInput
-          style={styles.search}
+          style={styles.input}
           value={punct}
           keyboardType={'numeric'}
           onChangeText={val => setPunct(val)}
@@ -133,35 +133,30 @@ export default function Form(props) {
 }
 
 const styles = StyleSheet.create({
-  filters: {
-    height: 50,
+  form: {
     width: '100%',
+    backgroundColor: '#C57C33',
+    height: '100%',
   },
   element: {
     flexDirection: 'row',
     height: 50,
     alignItems: 'center',
   },
-  search: {
+  input: {
     height: 40,
-    width: '50%',
-    borderColor: 'gray',
+    width: '75%',
+    borderColor: 'white',
     borderWidth: .5,
     borderRadius: 5,
     marginLeft: 5,
     marginRight: 'auto',
   },
-  buttons: {
-    borderColor: 'gray',
-    borderWidth: .5,
-    borderRadius: 5,
-    marginHorizontal: 3,
-    height: 40,
-    width:40,
+  button: {
+    backgroundColor: 'red'
   },
-  buttonsContent: {
-    display: 'flex',
-    alignSelf: 'center',
-    color: 'gray',
+  error: {
+    backgroundColor: 'red',
+
   }
 });
